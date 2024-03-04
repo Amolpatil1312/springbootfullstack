@@ -27,8 +27,14 @@ public class EmployeeController {
     }
 
     @GetMapping("/signIn/{empEmailId}/{empPassword}")
-    public ResponseEntity<Boolean> signIn(@PathVariable String empEmailId,@PathVariable String empPassword){
-        return ResponseEntity.ok(employeeServiceImpl.signIn(empEmailId, empPassword));
+    public ResponseEntity<String> signIn(@PathVariable String empEmailId,@PathVariable String empPassword){
+        String msg = "";
+        if(employeeServiceImpl.signIn(empEmailId, empPassword)){
+            msg = "Welcome to HRM Application Swaagat hai Apaka";
+        }else {
+            msg = "Password is Incorrect Please Try Again";
+        }
+        return ResponseEntity.ok(msg);
     }
 
     @GetMapping("/findById/{empId}")
