@@ -47,4 +47,75 @@ public class Employee {
     @Size(min = 5,message = "Password Should least 5 chars")
     private String empPassword;
 
+    public int getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(int empId) {
+        this.empId = empId;
+    }
+
+    public String getEmpName() {
+        return empName;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
+
+    public double getEmpSalary() {
+        return empSalary;
+    }
+
+    public void setEmpSalary(double empSalary) {
+        this.empSalary = empSalary;
+    }
+
+    public long getEmpContactNumber() {
+        return empContactNumber;
+    }
+
+    public void setEmpContactNumber(long empContactNumber) {
+        this.empContactNumber = empContactNumber;
+    }
+
+    public long getEmpUID() {
+        return empUID;
+    }
+
+    public void setEmpUID(long empUID) {
+        this.empUID = empUID;
+    }
+
+    public String getEmpPanCard() {
+        return empPanCard;
+    }
+
+    public void setEmpPanCard(String empPanCard) {
+        this.empPanCard = empPanCard;
+    }
+
+    public Date getEmpDOB() {
+        return empDOB;
+    }
+
+    public void setEmpDOB(Date empDOB) {
+        this.empDOB = empDOB;
+    }
+
+    public String getEmpEmailId() {
+        return empEmailId;
+    }
+
+    public void setEmpEmailId(String empEmailId) {
+        this.empEmailId = empEmailId;
+    }
+
+    public String getEmpPassword() {
+        return empPassword;
+    }
+
+    public void setEmpPassword(String empPassword) {
+        this.empPassword = empPassword;
+    }
 }
