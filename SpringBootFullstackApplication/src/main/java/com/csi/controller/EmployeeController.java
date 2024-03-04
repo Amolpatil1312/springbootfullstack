@@ -3,8 +3,6 @@ package com.csi.controller;
 import com.csi.model.Employee;
 import com.csi.service.EmployeeService;
 import com.csi.service.EmployeeServiceImpl;
-import lombok.extern.log4j.Log4j;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +17,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/")
-@Slf4j
 public class EmployeeController {
     @Autowired
     EmployeeServiceImpl employeeServiceImpl;
@@ -31,7 +28,6 @@ public class EmployeeController {
 
     @GetMapping("/signIn/{empEmailId}/{empPassword}")
     public ResponseEntity<Boolean> signIn(@PathVariable String empEmailId,@PathVariable String empPassword){
-        String msg = "";
         return ResponseEntity.ok(employeeServiceImpl.signIn(empEmailId, empPassword));
     }
 
@@ -125,16 +121,6 @@ public class EmployeeController {
     public ResponseEntity<String> deleteAll(){
         employeeServiceImpl.deleteAll();
         return ResponseEntity.ok("All Data Deleted Successfully");
-    }
-
-    @GetMapping("/sayHello")
-    public ResponseEntity<String> sayHello(){
-        return ResponseEntity.ok("This is New hello Message");
-    }
-
-    @GetMapping("/services")
-    public ResponseEntity<String> Services(){
-        return ResponseEntity.ok("App development | Java");
     }
 }
 
