@@ -127,5 +127,10 @@ public class EmployeeController {
     public ResponseEntity<String> sayHello(){
         return ResponseEntity.ok("This is New hello Message");
     }
+
+    @GetMapping("/services")
+    public ResponseEntity<String> Services(){
+        return ResponseEntity.ok("App development | Java");
+    }
 }
 
