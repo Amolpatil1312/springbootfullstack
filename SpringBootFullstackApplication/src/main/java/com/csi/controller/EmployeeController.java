@@ -122,5 +122,10 @@ public class EmployeeController {
         employeeServiceImpl.deleteAll();
         return ResponseEntity.ok("All Data Deleted Successfully");
     }
+
+    @GetMapping("/sayHello")
+    public ResponseEntity<String> sayHello(){
+        return ResponseEntity.ok("This is New hello Message");
+    }
 }
 
