@@ -1,9 +1,7 @@
 package com.csi.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
@@ -12,9 +10,6 @@ import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
 public class Employee {
 
 
@@ -116,6 +111,18 @@ public class Employee {
     }
 
     public void setEmpPassword(String empPassword) {
+        this.empPassword = empPassword;
+    }
+
+    public Employee(int empId, String empName, double empSalary, long empContactNumber, long empUID, String empPanCard, Date empDOB, String empEmailId, String empPassword) {
+        this.empId = empId;
+        this.empName = empName;
+        this.empSalary = empSalary;
+        this.empContactNumber = empContactNumber;
+        this.empUID = empUID;
+        this.empPanCard = empPanCard;
+        this.empDOB = empDOB;
+        this.empEmailId = empEmailId;
         this.empPassword = empPassword;
     }
 }

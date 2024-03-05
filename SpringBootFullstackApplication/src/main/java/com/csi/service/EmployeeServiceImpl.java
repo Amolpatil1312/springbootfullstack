@@ -3,7 +3,7 @@ package com.csi.service;
 import com.csi.exeption.RecordNotFoundExeption;
 import com.csi.model.Employee;
 import com.csi.repo.EmployeeRepo;
-import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-@Slf4j
+
 public class EmployeeServiceImpl implements EmployeeService {
 
     @Autowired
@@ -21,22 +21,22 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee SignUp(Employee employee) {
-        log.info("##########TRYING TO SAVE DATA INTO THE DATABASE##########");
+
         return employeeRepo.save(employee);
     }
 
     @Override
     public boolean signIn(String empEmailId, String empPassword) {
-        log.info("##########TRYING TO SIGNUP##########");
+
         boolean flag = false;
         for (Employee employee : findAll()) {
             if (employee.getEmpEmailId().equals(empEmailId) &&
                     employee.getEmpPassword().equals(empPassword)) {
                 flag = true;
-                log.info("#########SIGNIN DONE SUCCESSFULLY###########");
+
             }
         }
-        log.info("##############SIGNIN NOT DONE###########");
+
         return flag;
     }
 
@@ -62,19 +62,18 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> findAll() {
-        log.info("#########TRYING TO FIND ALL THE DATA###########");
+
         return employeeRepo.findAll();
     }
 
     @Override
     public List<Employee> saveBulkOfData(List<Employee> empList) {
-        log.info("##########TRYING TO SAVE ALL THE DATA##########");
+
         return employeeRepo.saveAll(empList);
     }
 
     @Override
     public List<Employee> findByAnyInput(String anyInput) throws ParseException {
-        log.info("##########TRYING TO FIND BY ANY INPUT###########");
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date empdate = dateFormat.parse(anyInput);

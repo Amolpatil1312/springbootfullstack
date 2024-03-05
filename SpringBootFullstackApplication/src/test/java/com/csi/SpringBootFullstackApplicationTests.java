@@ -52,6 +52,13 @@ class SpringBootFullstackApplicationTests {
 
     }
 
+    @Test
+    public void saveTest(){
+        Employee employee = new Employee(101,"amol",45000,8735476787l,66876874354l,"65465467kGKHG",new Date(),"beamol@gmail.com","amol123");
+        employeeServiceImpl.SignUp(employee);
+        Mockito.verify(employeeRepoImpl,Mockito.times(1)).save(employee);
+    }
+
 
 
 
